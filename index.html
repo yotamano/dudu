@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <div class="error-noise">
+  <div class="error-effect">   </div>
+     <div class="old-tv-content">
+          <div id="chNum">0</div>
+       <div id="remote">
+       <p id="ch-up">+</p>
+       <p>CH</p>
+       <p id="ch-down">-</p>
+       </div>
+     </div>
+
+
+<div id="c01" class="page">
+<div class="page-content"><h1>דודו טופז</h1>
+<img src="dudu.jpg" alt="">
+</div>
+</div>
+<div id="c02" class="page"></div>
+<div id="c03" class="page"></div>
+<div id="c04" class="page"></div>
+<div id="c00" class="page"></div>
+</div>
+
+<script>
+  var i=0;
+  var lowCh = 1;
+  var topCh = 4;
+    $(document).ready(function(){
+      for (g=1; g<=topCh; g++){
+        $('#c0'+ g).hide()};
+
+$('#c00').show();
+$("#ch-up").click(function() {
+  var hideCh = i;
+  if(i>=lowCh && i<topCh){i++}else{i=1};
+  $("#chNum").html(i);
+    var showCh = i;
+  $('#c0'+ hideCh).hide();
+  $('#c0'+ showCh).show();
+  console.log(i);
+});
+
+$("#ch-down").click(function() {
+  var hideCh = i;
+  if(i>lowCh && i<=topCh){i--}else{i=topCh};
+  $("#chNum").html(i);
+    var showCh = i;
+  $('#c0'+ hideCh).hide();
+  $('#c0'+ showCh).show();
+  console.log(i);
+});
+
+  });
+</script>
+
+</body>
+</html>
