@@ -1,6 +1,13 @@
 html, body{
   height: 100%;
   overflow: hidden;
+  margin: 0;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; 
 }
 
 @font-face {
@@ -28,6 +35,7 @@ html, body{
   font-family: VCR;
     filter: drop-shadow(2px -4px  #000);
 
+
 }
 #chNum{
   position: absolute;
@@ -47,9 +55,15 @@ html, body{
   right:  3%;
     font-size: 8vh;
   z-index: 4;
+
 }
 
-
+#ch-up{
+  cursor: pointer;
+}
+ #ch-down{
+   cursor: pointer;
+ }
 #c00{
 background-color:  black;
 }
@@ -78,7 +92,21 @@ h1{
 }
 
 video{
-  z-index: -10;
+  right: 0;
+  top: 0;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  z-index: -5;
+  object-fit: cover;
+}
+
+img{
+    right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
 }
 
 .error-noise {
@@ -143,7 +171,7 @@ video{
     -o-animation: crt-image 20ms alternate infinite;
     -webkit-animation: crt-image 20ms alternate infinite;
     animation: crt-image 20ms alternate infinite;
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
     .old-tv-content::after {

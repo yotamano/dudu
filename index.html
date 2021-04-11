@@ -26,7 +26,7 @@
 <div id="c03" class="page"><img src="assets/ch03.png"/></div>
 <div id="c04" class="page"><img src="assets/ch04.png"/></div>
 <div id="c05" class="page">
-  <video muted autoplay="autoplay">
+  <video loop autoplay>
     <source src="https://drive.google.com/uc?export=download&id=1aG5w9bbwWex0KdYIZyyEteKzVWeG-AxT" type='video/mp4'>
 </video></div>
 <div id="c00" class="page"></div>
@@ -46,7 +46,7 @@ $(window).resize(function(){
 
     $video.css({
         'width': width,
-        'marginLeft' : 0
+        // 'marginLeft' : 0
     });
 }).resize();
 
@@ -61,21 +61,35 @@ $(window).resize(function(){
 $('#c00').show();
 $("#ch-up").click(function() {
   var hideCh = i;
+  $("video").trigger('play');
   if(i>=lowCh && i<topCh){i++}else{i=1};
   $("#chNum").html(i);
     var showCh = i;
   $('#c0'+ hideCh).hide();
   $('#c0'+ showCh).show();
+  if (i == 5){
+    $("video").prop('muted', false);
+  }
+  else {
+      $("video").prop('muted', true);
+  }
   console.log(i);
 });
 
 $("#ch-down").click(function() {
   var hideCh = i;
+  $("video").trigger('play');
   if(i>lowCh && i<=topCh){i--}else{i=topCh};
   $("#chNum").html('CH'&&i);
     var showCh = i;
   $('#c0'+ hideCh).hide();
   $('#c0'+ showCh).show();
+  if (i == 5){
+    $("video").prop('muted', false);
+  }
+  else {
+      $("video").prop('muted', true);
+  }
   console.log(i);
 });
 
