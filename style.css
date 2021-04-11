@@ -2,6 +2,12 @@ html, body{
   height: 100%;
   overflow: hidden;
 }
+
+@font-face {
+  font-family: VCR;
+  src: url(VCR_OSD_MONO.ttf);
+}
+
 .page{
     height: 100%;
     width: 100%;
@@ -14,26 +20,32 @@ html, body{
   left: 50%;
   /* z-index: 0 */
 }
+
+.green-text{
+  background: -webkit-radial-gradient(#7cef9a 5%, #378445 285%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: VCR;
+    filter: drop-shadow(2px -4px  #000);
+
+}
 #chNum{
   position: absolute;
-  font-family: fantasy;
   font-size: 10vh;
-  color: #eee;
-  top: 5%;
+    top: 5%;
   left: 5%;
+  z-index: 5;
 }
 
 #remote{
-  font-family: fantasy;
-  position: absolute;
-  height: 25vh;
+    position: absolute;
+  height: 20%;
   width: auto;
-    color: #eee;
-  font-size: 5vh;
   text-align: center;
-  line-height: 50%;
-  top: 50%;
+  /* line-height: 80%; */
+  top: 20%;
   right:  3%;
+    font-size: 8vh;
   z-index: 4;
 }
 
@@ -63,6 +75,10 @@ h1{
   font-size: 15vh;
   font-family: sans-serif;
   color: #555;
+}
+
+video{
+  z-index: -10;
 }
 
 .error-noise {
@@ -122,7 +138,7 @@ h1{
     background-position: 40px 20px;
     background-size: 100%;
     /* border-radius: 50% / 5%; */
-    -webkit-filter: grayscale(1) brightness(1.2) contrast(1.5);
+    /* -webkit-filter: grayscale(1) brightness(1.2) contrast(1.5); */
     -moz-animation: crt-image 20ms alternate infinite;
     -o-animation: crt-image 20ms alternate infinite;
     -webkit-animation: crt-image 20ms alternate infinite;

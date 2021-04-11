@@ -9,30 +9,51 @@
   <div class="error-noise">
   <div class="error-effect">   </div>
      <div class="old-tv-content">
-          <div id="chNum">0</div>
+          <div id="chNum" class="green-text">0</div>
        <div id="remote">
-       <p id="ch-up">+</p>
-       <p>CH</p>
-       <p id="ch-down">-</p>
+       <p id="ch-up" class="green-text">+</p>
+       <p class="green-text">C H</p>
+       <p id="ch-down" class="green-text">-</p>
        </div>
      </div>
 
 
 <div id="c01" class="page">
-<div class="page-content"><h1>דודו טופז</h1>
-<img src="dudu.jpg" alt="">
+  <img src="assets/ch01.png"/>
+
 </div>
-</div>
-<div id="c02" class="page"></div>
-<div id="c03" class="page"></div>
-<div id="c04" class="page"></div>
+<div id="c02" class="page"><img src="assets/ch02.png"/></div>
+<div id="c03" class="page"><img src="assets/ch03.png"/></div>
+<div id="c04" class="page"><img src="assets/ch04.png"/></div>
+<div id="c05" class="page">
+  <video muted autoplay="autoplay">
+    <source src="https://drive.google.com/uc?export=download&id=1aG5w9bbwWex0KdYIZyyEteKzVWeG-AxT" type='video/mp4'>
+</video></div>
 <div id="c00" class="page"></div>
 </div>
 
 <script>
+var $video  = $('video'),
+    $window = $(window);
+
+$(window).resize(function(){
+    var width = $window.width();
+    $video.css('width', width);
+
+    var videoHeight = $video.height(),
+        windowHeight = $window.height(),
+    marginLeftAdjust =   (windowHeight - videoHeight) / 2;
+
+    $video.css({
+        'width': width,
+        'marginLeft' : 0
+    });
+}).resize();
+
+
   var i=0;
   var lowCh = 1;
-  var topCh = 4;
+  var topCh = 5;
     $(document).ready(function(){
       for (g=1; g<=topCh; g++){
         $('#c0'+ g).hide()};
@@ -51,7 +72,7 @@ $("#ch-up").click(function() {
 $("#ch-down").click(function() {
   var hideCh = i;
   if(i>lowCh && i<=topCh){i--}else{i=topCh};
-  $("#chNum").html(i);
+  $("#chNum").html('CH'&&i);
     var showCh = i;
   $('#c0'+ hideCh).hide();
   $('#c0'+ showCh).show();
