@@ -2,15 +2,18 @@
 <html>
 <head>
   <link rel="stylesheet" href="style.css">
+  <link rel="preload" href="VCR_OSD_MONO.ttf" as="font" crossorigin="anonymous" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+
   <div class="error-noise over-effects"></div>
-  <div class="error-effect over-effects"></div>
+  <div class="error-effect over-effects" style="opacity:0.1;"></div>
   <div class="old-tv-content over-effects"></div>
 
   <audio id="static" src="Static.mp3"></audio>
           <div id="chNum" class="green-text">0</div>
+        <div id="clock" style="display:none;">  <span id="minutes"></span>:<span id="seconds"></span></div>
        <div id="remote" style="display:none;">
        <p id="ch-up" class="green-text">+</p>
        <p class="green-text">C H</p>
@@ -20,6 +23,7 @@
 
 
 <div id="noise" class="page"></div>
+
 <div id="c01" class="page">
   <div class="ch-content">
     <img class="gify" src="assets/screaming-mouth-static.png" loc="assets/screaming-mouth" style="top:20rem; right:5rem; max-width: 35%;"/>
@@ -38,7 +42,7 @@
     <source src="https://drive.google.com/uc?export=download&id=1edU1jd5QK5hjyI3xv0bl-mJwW9Rer6TU" type='video/mp4'>
   </video>
   <video id="32" style="display:none;" vid="yes">
-    <source src="https://drive.google.com/uc?export=download&id=1toWf-jV9tBPi0g_dKX_h2JKceNdLNgWE" type='video/mp4'>
+    <source src="https://drive.google.com/uc?export=download&id=13StrQ9gqUoTifNJw0kSAixSDHWTsMVnR" type='video/mp4'>
   </video>
   <div id="33" class="ch-content" style="display:none;" vid="no">
     <img class="ch-bg" src="assets/ch03.png"/>
@@ -50,7 +54,7 @@
 <div id="c04" class="page"><img class="ch-bg" src="assets/ch04.png"/></div>
 <div id="c05" class="page">
 
-  <video autoplay id="51" vid="yes">
+  <video autoplay id="51" vid="yes" preload="auto">
     <source src="https://drive.google.com/uc?export=download&id=1a-HwGBEIY8wLHSvtVH56M3dcmVwgb8t3" type='video/mp4'>
 </video>
 <video id="52" style="display:none;" vid="yes">
@@ -71,7 +75,7 @@
   <img class="ch-bg" src="assets/ch02.png"/>
 </div>
 </div>
-<div id="c00" class="page"><h1 class="green-text" id="on-button">ON</h1></div>
+<div id="c00" class="page"><h1 id="on-button">ON</h1></div>
 
 
 <script>
@@ -158,11 +162,21 @@ $(window).resize(function(){
 $('#c00').show();
 /////first click
 $("#on-button").click(function() {
+  $(".error-effect").css("opacity", "1");
   $('#remote').show();
    $('video#51').get(0).play();
    $('video#31').get(0).play();
    $('.page > video').prop('muted', true);
    $('#ch-down').trigger('click');
+
+   var sec = 1150;
+   function pad ( val ) { return val > 9 ? val : "0" + val; }
+   setInterval( function(){
+       $("#seconds").html(pad(++sec%60));
+       $("#minutes").html(pad(parseInt(sec/60,10)));
+       $('#clock').show();
+   }, 1000);
+
 });
 
 $("#ch-up").click(function() {
@@ -211,6 +225,8 @@ $(".gify").hover(function(){
      }, function(){
   $(this).attr('src' , $(this).attr('loc') + '-static.png');
   });
+
+
 </script>
 
 </body>

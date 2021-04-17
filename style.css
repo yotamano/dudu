@@ -28,16 +28,41 @@ html, body{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: VCR;
-    filter: drop-shadow(2px -4px  #000);
+    filter: drop-shadow(0.15rem -0.25rem  #000);
 
 
 }
+h1{
+  font-size: 15vh;
+  color: #fff;
+    font-family: VCR;
+  position: absolute;
+  top:25%;
+  left: 45%;
+text-align: center;
+z-index: 4;
+filter: drop-shadow(2px -4px  #000);
+}
+
+h1:hover{
+  color: #7cef9a;
+}
+
 #chNum{
   position: absolute;
   font-size: 10vh;
     top: 5%;
   left: 5%;
   z-index: 5;
+}
+#clock{
+  font-family: VCR;
+  position: absolute;
+  font-size: 6vh;
+    bottom: 5%;
+  left: 5%;
+  z-index: 1;
+color: #f0f0f0;
 }
 
 #remote{
@@ -125,16 +150,7 @@ background-color:  black;
 }
 
 
-h1{
-  font-size: 15vh;
-  position: absolute;
-  color: #eee;
-top: 25%;
-right: 45%;
-width: auto;
-text-align: center;
-z-index: 4;
-}
+
 
 video{
   right: 0;
