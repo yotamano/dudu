@@ -5,32 +5,74 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+  <div class="error-noise over-effects"></div>
+  <div class="error-effect over-effects"></div>
+  <div class="old-tv-content over-effects"></div>
 
-  <div class="error-noise">
-  <div class="error-effect">   </div>
-     <div class="old-tv-content">
+  <audio id="static" src="Static.mp3"></audio>
           <div id="chNum" class="green-text">0</div>
-       <div id="remote">
+       <div id="remote" style="display:none;">
        <p id="ch-up" class="green-text">+</p>
        <p class="green-text">C H</p>
        <p id="ch-down" class="green-text">-</p>
+
        </div>
-     </div>
 
 
+<div id="noise" class="page"></div>
 <div id="c01" class="page">
-  <img src="assets/ch01.png"/>
+  <div class="ch-content">
+    <img class="gify" src="assets/screaming-mouth-static.png" loc="assets/screaming-mouth" style="top:20rem; right:5rem; max-width: 35%;"/>
 
+  </div>
+<img class="ch-bg" src="assets/ch01.png"/>
 </div>
-<div id="c02" class="page"><img src="assets/ch02.png"/></div>
-<div id="c03" class="page"><img src="assets/ch03.png"/></div>
-<div id="c04" class="page"><img src="assets/ch04.png"/></div>
+<div id="c02" class="page">
+<div class="ch-content">
+  <img class="gify" src="assets/hands-static.png" loc="assets/hands" style="top: 6rem; left:5rem; max-width: 55%;"/>
+</div>
+<img class="ch-bg" src="assets/ch02.png"/>
+</div>
+<div id="c03" class="page">
+  <video autoplay id="31" vid="yes">
+    <source src="https://drive.google.com/uc?export=download&id=1edU1jd5QK5hjyI3xv0bl-mJwW9Rer6TU" type='video/mp4'>
+  </video>
+  <video id="32" style="display:none;" vid="yes">
+    <source src="https://drive.google.com/uc?export=download&id=1toWf-jV9tBPi0g_dKX_h2JKceNdLNgWE" type='video/mp4'>
+  </video>
+  <div id="34" class="ch-content" style="display:none;" vid="end">
+    <img class="ch-bg" src="assets/ch03.png"/>
+  </div>
+  <video id="33" style="display:none;" vid="yes">
+    <source src="https://drive.google.com/uc?export=download&id=1Dc2CaVbMpBpRUcepiRQi4Kg9JbZ33ZRL" type='video/mp4'>
+  </video>
+</div>
+<div id="c04" class="page"><img class="ch-bg" src="assets/ch04.png"/></div>
 <div id="c05" class="page">
-  <video loop autoplay>
-    <source src="https://drive.google.com/uc?export=download&id=1aG5w9bbwWex0KdYIZyyEteKzVWeG-AxT" type='video/mp4'>
-</video></div>
-<div id="c00" class="page"></div>
+
+  <video autoplay id="51" vid="yes">
+    <source src="https://drive.google.com/uc?export=download&id=1a-HwGBEIY8wLHSvtVH56M3dcmVwgb8t3" type='video/mp4'>
+</video>
+<video id="52" style="display:none;" vid="yes">
+  <source src="https://drive.google.com/uc?export=download&id=1y6Bg71lpajgCrcLHmDB-YL_XOLAsa5dc" type='video/mp4'>
+</video>
+<div id="53" class="ch-content"  style="display:none;" vid="no">
+  <img class="gify" src="assets/hands-static.png" loc="assets/hands" style="top: 6rem; left:5rem; max-width: 55%;"/>
+  <img class="ch-bg" src="assets/ch02.png"/>
 </div>
+<video id="54" style="display:none;" vid="yes">
+  <source src="https://drive.google.com/uc?export=download&id=12O-qjjxr_Jf4FdU66_iAVGHJRNTloujv" type='video/mp4'>
+</video>
+<video id="55" style="display:none;" vid="yes">
+  <source src="https://drive.google.com/uc?export=download&id=1toWf-jV9tBPi0g_dKX_h2JKceNdLNgWE" type='video/mp4'>
+</video>
+<div id="56" class="ch-content"  style="display:none;" vid="end">
+  <img class="gify" src="assets/hands-static.png" loc="assets/hands" style="top: 6rem; left:5rem; max-width: 55%;"/>
+  <img class="ch-bg" src="assets/ch02.png"/>
+</div>
+</div>
+<div id="c00" class="page"><h1 class="green-text" id="on-button">ON</h1></div>
+
 
 <script>
 var $video  = $('video'),
@@ -54,45 +96,120 @@ $(window).resize(function(){
   var i=0;
   var lowCh = 1;
   var topCh = 5;
-    $(document).ready(function(){
-      for (g=1; g<=topCh; g++){
-        $('#c0'+ g).hide()};
+      $(document).ready(function(){
+
+        $('#c03> video').on('ended',function(){
+        var num = $(this).attr('id');
+        $(this).get(0).pause();
+        $(this).hide();
+        num++;
+        if ($('#' + num).attr('vid') == 'yes'){
+        $('video#'+ num).get(0).play();
+        $('video#'+ num).show();
+        console.log(num);
+      }else if ($('#' + num).attr('vid') == 'no'){
+        console.log(num);
+        $('#'+num).show();
+          setTimeout(() => {
+             $('#'+num).hide();
+             num++;
+              $('video#'+ num).show();
+             $('video#'+ num).get(0).play();
+             console.log(num);
+             }, 1000);
+    } else if ($('#' + num).attr('vid') == 'end'){
+      console.log(num);
+      $('#'+num).show();
+        };
+      });
+
+      $('#c05> video').on('ended',function(){
+        var num = $(this).attr('id');
+        $(this).get(0).pause();
+        $(this).hide();
+        num++;
+        if ($('#' + num).attr('vid') == 'yes'){
+        $('video#'+ num).get(0).play();
+        $('video#'+ num).show();
+        console.log(num);
+      }else if ($('#' + num).attr('vid') == 'no'){
+        console.log(num);
+        $('#'+num).show();
+          setTimeout(() => {
+             $('#'+num).hide();
+             num++;
+              $('video#'+ num).show();
+             $('video#'+ num).get(0).play();
+             console.log(num);
+             }, 1000);
+    } else if ($('#' + num).attr('vid') == 'end'){
+      console.log(num);
+      $('#'+num).show();
+        };
+      });
+
+
+
+
+
+  for (g=1; g<=topCh; g++){
+  $('#c0'+ g).hide()};
 
 $('#c00').show();
+/////first click
+$("#on-button").click(function() {
+  $('#remote').show();
+   $('video#51').get(0).play();
+   $('video#31').get(0).play();
+   $('.page > video').prop('muted', true);
+   $('#ch-down').trigger('click');
+});
+
 $("#ch-up").click(function() {
-  var hideCh = i;
-  $("video").trigger('play');
+  $('#noise').show();
+  setTimeout(() => {  $('#noise').hide();  }, 500);
+    var hideCh = i;
+  $('#static').get(0).play();
   if(i>=lowCh && i<topCh){i++}else{i=1};
   $("#chNum").html(i);
     var showCh = i;
   $('#c0'+ hideCh).hide();
   $('#c0'+ showCh).show();
-  if (i == 5){
-    $("video").prop('muted', false);
-  }
-  else {
-      $("video").prop('muted', true);
-  }
+  $('#c0'+hideCh+'> video').prop('muted', true);
+  $('#c0'+showCh+'> video').prop('muted', false);
+
   console.log(i);
 });
 
 $("#ch-down").click(function() {
+  $('#noise').show();
+  setTimeout(() => {  $('#noise').hide();  }, 500);
   var hideCh = i;
-  $("video").trigger('play');
+  $('#static').get(0).play();
   if(i>lowCh && i<=topCh){i--}else{i=topCh};
   $("#chNum").html('CH'&&i);
     var showCh = i;
   $('#c0'+ hideCh).hide();
   $('#c0'+ showCh).show();
-  if (i == 5){
-    $("video").prop('muted', false);
-  }
-  else {
-      $("video").prop('muted', true);
-  }
+  $('#c0'+hideCh+'> video').prop('muted', true);
+  $('#c0'+showCh+'> video').prop('muted', false);
+
   console.log(i);
 });
 
+
+  });
+
+
+
+
+
+
+
+$(".gify").hover(function(){
+  $(this).attr('src' , $(this).attr('loc') + '-active.gif');
+     }, function(){
+  $(this).attr('src' , $(this).attr('loc') + '-static.png');
   });
 </script>
 

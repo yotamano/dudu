@@ -7,7 +7,7 @@ html, body{
    -khtml-user-select: none; /* Konqueror HTML */
      -moz-user-select: none; /* Old versions of Firefox */
       -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none; 
+          user-select: none;
 }
 
 @font-face {
@@ -21,12 +21,7 @@ html, body{
     z-index: 4;
     }
 
-.page-content{
-  /* position: absolute; */
-  top: 10%;
-  left: 50%;
-  /* z-index: 0 */
-}
+
 
 .green-text{
   background: -webkit-radial-gradient(#7cef9a 5%, #378445 285%);
@@ -64,31 +59,81 @@ html, body{
  #ch-down{
    cursor: pointer;
  }
+
+ #noise{
+      /* background-color:  red; */
+   width: 100%;
+   height: 100%;
+   display: none;
+   z-index: 10;
+   position: absolute;
+   background-size: 100%;
+   background-image: url(download2.png);
+   background-blend-mode: normal;
+opacity: 1;
+   -moz-animation: noise 200ms infinite linear;
+   -o-animation: noise 200ms infinite linear;
+   -webkit-animation: noise 200ms infinite linear;
+   animation: noise 200ms infinite linear;
+
+ }
+
+ .ch-content{
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   z-index: 0;
+        }
+
+.ch-bg{
+position: absolute;
+width: 100%;
+right: 0;
+top: 0;
+min-width: 100%;
+min-height: 100%;
+object-fit: cover;
+z-index: -5;
+}
+
+.gify{
+position: absolute;
+width: 100%;
+height: auto;
+}
+
+
+
 #c00{
 background-color:  black;
 }
 
 #c01{
-background-color:  red;
+/* background-color:  red; */
 }
 
 #c02{
-background-color:  blue;
+/* background-color:  blue; */
 }
 
 #c03{
-background-color:  green;
+/* background-color:  green; */
 }
 
 #c04{
-background-color:  pink;
+/* background-color:  pink; */
 }
 
 
 h1{
   font-size: 15vh;
-  font-family: sans-serif;
-  color: #555;
+  position: absolute;
+  color: #eee;
+top: 25%;
+right: 45%;
+width: auto;
+text-align: center;
+z-index: 4;
 }
 
 video{
@@ -101,22 +146,18 @@ video{
   object-fit: cover;
 }
 
-img{
-    right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  object-fit: cover;
+.over-effects{
+  pointer-events: none;
+  z-index: 3;
 }
-
 .error-noise {
-    position: relative;
+  pointer-events: none;
+      position: absolute;
     width: 100%;
     height:100%;
     overflow: hidden;
     /* border-radius: 5% / 50%; */
-    z-index: 3;
-}
+    }
 
 .error-effect {
     position: absolute;
@@ -158,6 +199,7 @@ img{
     }
 
 .old-tv-content {
+pointer-events: none;
     position: absolute;
     width: 100%;
     height: 100%;
