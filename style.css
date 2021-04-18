@@ -8,6 +8,7 @@ html, body{
      -moz-user-select: none; /* Old versions of Firefox */
       -ms-user-select: none; /* Internet Explorer/Edge */
           user-select: none;
+
 }
 
 @font-face {
@@ -19,8 +20,15 @@ html, body{
     height: 100%;
     width: 100%;
     z-index: 4;
-    }
 
+    }
+.blue-bg{
+  height: 100%;
+  background-color: blue;
+  z-index: -20 !important;
+  position: relative;
+
+}
 
 
 .green-text{
@@ -89,7 +97,6 @@ color: #f0f0f0;
       /* background-color:  red; */
    width: 100%;
    height: 100%;
-   display: none;
    z-index: 10;
    position: absolute;
    background-size: 100%;
@@ -104,7 +111,7 @@ opacity: 1;
  }
 
  .ch-content{
-   position: absolute;
+   /* position: absolute; */
    height: 100%;
    width: 100%;
    z-index: 0;
@@ -127,10 +134,34 @@ width: 100%;
 height: auto;
 }
 
+.static-img{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  }
+
+.text-container{
+  display: inline-grid;
+  position:absolute;
+   max-width: 60%;
+    min-height: 50%;
+     top:10%;
+      left: 30%;
+       gap: 40px;
+}
+  .text-img{
+    position: relative;
+    width: 100%;
+    height: auto;
+    }
+
+
+
+
 
 
 #c00{
-background-color:  black;
+background-color:  black !important;
 }
 
 #c01{

@@ -6,11 +6,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-
+<div id="noise" class="page" style="display:none;"></div>
   <div class="error-noise over-effects"></div>
   <div class="error-effect over-effects" style="opacity:0.1;"></div>
   <div class="old-tv-content over-effects"></div>
-
+<div class="blue-bg" style="display:none;"></div>
   <audio id="static" src="Static.mp3"></audio>
           <div id="chNum" class="green-text">0</div>
         <div id="clock" style="display:none;">  <span id="minutes"></span>:<span id="seconds"></span></div>
@@ -22,15 +22,29 @@
        </div>
 
 
-<div id="noise" class="page"></div>
+
 
 <div id="c01" class="page">
-  <div class="ch-content">
-    <img class="gify" src="assets/screaming-mouth-static.png" loc="assets/screaming-mouth" style="top:20rem; right:5rem; max-width: 35%;"/>
-
-  </div>
-<img class="ch-bg" src="assets/ch01.png"/>
+    <video autoplay id="11" vid="yes">
+    <source src="https://drive.google.com/uc?export=download&id=1Qv66PcBPNSD97Bg_gKE9xJVgcDv4SyNi" type='video/mp4'>
+  </video>
+    <video  id="12" vid="yes" style="display:none;">
+      <source src="https://drive.google.com/uc?export=download&id=1fvdhNgmRJJWpmgKMtW9zboRBkbXD4YVP" type='video/mp4'>
+    </video>
+  <div id="13" class="ch-content" style="display:none;" vid="end">
+    <img class="static-img" src="assets/c01-logo.png"  style="bottom:10%; right:5%; max-width: 20vh;"/>
+          <img class="gify" src="assets/duduface-static.png" loc="assets/duduface" style="top:5%; right:8%; max-width: 25vh;"/>
+          <img class="gify" src="assets/screaming-mouth-static.png" loc="assets/screaming-mouth" style="top:40%; left:5%; max-width: 40vh;"/>
+          <div class="text-container">
+  <img class="text-img" src="assets/c01-text-01.png"  style=" top:10%; right:25%; max-width: 50vh;"/>
+  <img class="text-img" src="assets/c01-text-01.png"  style=" top:10%; left:25%; max-width: 50vh;"/>
+  <img class="text-img" src="assets/c01-text-01.png"  style=" bottom:10%; right:25%; max-width: 50vh;"/>
 </div>
+        <img class="ch-bg" src="assets/ch1-stars.png" style="background-color:#101010"/>
+  </div>
+</div>
+
+
 <div id="c02" class="page">
 <div class="ch-content">
   <img class="gify" src="assets/hands-static.png" loc="assets/hands" style="top: 6rem; left:5rem; max-width: 55%;"/>
@@ -102,6 +116,31 @@ $(window).resize(function(){
   var topCh = 5;
       $(document).ready(function(){
 
+        $('#c01> video').on('ended',function(){
+        var num = $(this).attr('id');
+        $(this).get(0).pause();
+        $(this).hide();
+        num++;
+        if ($('#' + num).attr('vid') == 'yes'){
+        $('video#'+ num).get(0).play();
+        $('video#'+ num).show();
+        console.log(num);
+      }else if ($('#' + num).attr('vid') == 'no'){
+        console.log(num);
+        $('#'+num).show();
+          setTimeout(() => {
+             $('#'+num).hide();
+             num++;
+              $('video#'+ num).show();
+             $('video#'+ num).get(0).play();
+             console.log(num);
+             }, 1000);
+    } else if ($('#' + num).attr('vid') == 'end'){
+      console.log(num);
+      $('#'+num).show();
+        };
+      });
+
         $('#c03> video').on('ended',function(){
         var num = $(this).attr('id');
         $(this).get(0).pause();
@@ -163,19 +202,25 @@ $('#c00').show();
 /////first click
 $("#on-button").click(function() {
   $(".error-effect").css("opacity", "1");
-  $('#remote').show();
-   $('video#51').get(0).play();
+    $('.blue-bg').show();
+     $('video#51').get(0).play();
+   $('video#11').get(0).play();
    $('video#31').get(0).play();
    $('.page > video').prop('muted', true);
-   $('#ch-down').trigger('click');
+   $('#ch-up').trigger('click');
+   setTimeout(() => { $('#remote').fadeIn('slow');  }, 1000);
 
-   var sec = 1150;
+
+////clock
+   var sec = 1100;
    function pad ( val ) { return val > 9 ? val : "0" + val; }
    setInterval( function(){
+
        $("#seconds").html(pad(++sec%60));
        $("#minutes").html(pad(parseInt(sec/60,10)));
        $('#clock').show();
-   }, 1000);
+
+        }, 1000);
 
 });
 
