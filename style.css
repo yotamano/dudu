@@ -32,6 +32,8 @@ html, body{
 
 #dudu-logo{
     background-color: blue;
+    display: flex;
+  justify-content: center;
 }
 
 
@@ -350,4 +352,51 @@ pointer-events: none;
         top: 100%;
         opacity: 0;
     }
+}
+#white-box{
+  top:50%;
+    position: absolute;
+  background-color: white;
+  width: 0%;
+  height: 0%;
+  z-index: 10;
+  opacity: 0;
+  transform-origin: 50% 50%;
+}
+
+.animate{
+  animation: turn-on 0.5s;
+}
+
+@keyframes turn-on {
+0%{
+  opacity: 0;
+  width: 0%;
+  height: 0%;
+}
+2%{
+  opacity: 1;
+  width: 2%;
+  height: 2%;
+}
+30%{
+  width: 80%;
+  height: 2%;
+}
+50%{
+  width: 90%;
+  height: 2%;
+}
+
+98%{
+  top:0%;
+  height: 100%;
+  opacity: 100;
+  width: 100%;
+
+}
+100%{
+  opacity: 0;
+
+}
 }

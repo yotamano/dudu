@@ -3,6 +3,7 @@
 <head>
   <link rel="stylesheet" href="style.css">
   <link rel="preload" href="VCR_OSD_MONO.ttf" as="font" crossorigin="anonymous" />
+  <link rel="icon" type="image/png" href="assets/dudu.ico"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
@@ -11,7 +12,7 @@
   <div class="error-effect over-effects" style="opacity:0.1;"></div>
   <div class="old-tv-content over-effects"></div>
 <div class="blue-bg" style="display:none;"></div>
-  <audio id="static" src="Static.mp3"></audio>
+  <audio id="static" src="assets/white-noise.mp3"></audio>
           <div id="chNum" class="green-text">0</div>
         <!-- <div id="clock" style="display:none;">  <span id="minutes"></span>:<span id="seconds"></span></div>   -->
        <div id="remote" style="display:none;">
@@ -34,11 +35,11 @@
       <source src="https://drive.google.com/uc?export=download&id=1fvdhNgmRJJWpmgKMtW9zboRBkbXD4YVP" type='video/mp4'>
     </video>
   <div id="13" class="ch-content" style="display:none;" vid="no">
-    <img class="static-img" src="assets/ch01/ch01-logo.png"  style="bottom:10%; right:5%; max-width: 20vh;"/>
+    <img class="static-img" src="assets/ch01/ch01-logo.png"  style="bottom:10%; right:5%; max-width: 30vh;"/>
 
           <div class="text-container">
-  <img class="text-img" src="assets/ch01/ch01-text-01.png"  style=" top:10%; right:25%; max-width: 20vh;"/>
-  <img class="text-img" src="assets/ch01/ch01-text-02.png"  style=" top:10%; left:25%; max-width: 20vh;"/>
+  <img class="text-img" src="assets/ch01/ch01-text-01.png"  style=" top:10%; right:25%; max-width: 30vh;"/>
+  <img class="text-img" src="assets/ch01/ch01-text-02.png"  style=" top:10%; left:25%; max-width: 30vh;"/>
 </div>
 <video id="13">
   <source src="https://drive.google.com/uc?export=download&id=1irmwkevAyfFA6NfDYis5LphcopcnVRKH" type='video/mp4' poster='assets/ch01/ch01-bg.png'>
@@ -78,7 +79,7 @@
       </video>
       </div>
     <video id="24" style="display:none;" vid="yes">
-      <source src="https://drive.google.com/uc?export=download&id=/1RG-fFKz3WA_dthbmcxFxnczZ-vaBojhd" type='video/mp4'>
+      <source src="https://drive.google.com/uc?export=download&id=1RG-fFKz3WA_dthbmcxFxnczZ-vaBojhd" type='video/mp4'>
     </video>
     <video id="25" style="display:none;" vid="yes">
       <source src="https://drive.google.com/uc?export=download&id=1EUGpapqvCMmYlMk_Bd5auc7zkWgfvtmR" type='video/mp4'>
@@ -175,9 +176,10 @@
 </div>
 
 
-
 <div id="c00" class="page"><h1 id="on-button">ON</h1></div>
-<div id="dudu-logo" class="page" style="display:none;"><img class="static-img" src="assets/ch04/ch04-logo.png" style="top:30%; right:45%; max-width: 20vh;"/></div>
+
+<div id="dudu-logo" class="page" style="display:none;"><img class="static-img" src="assets/dudutv-logo.png" style="margin-left: auto; margin-right: auto; max-width: 20vh; top:35% "/></div>
+
 
 <script>
 var $video  = $('video'),
@@ -222,7 +224,10 @@ $(window).resize(function(){
                             $('video#'+ num).addClass('now-playing');
                             $('video#'+ num).show();
                             try{
-                            // $('video#'+ (num+=1)).get(0).load();
+                              var nextVid  = num+=1;
+                              console.log(nextVid);
+                            $('video#'+ nextVid).get(0).load();
+                            $('video#'+ nextVid).get(0).pause();
                           }catch(e){};
                             console.log(num);
                           }else if ($('#' + num).attr('vid') == 'no'){
@@ -247,11 +252,62 @@ $(window).resize(function(){
                            };
 
                         } else if ($('#' + num).attr('vid') == 'end'){
+                          $('#c01 .ch-logo').hide();
+                          $('#'+num).show();
                           console.log(num + ' end');
                             };
                           });
-/////CH02
-                $('#c02 video').on('ended',function(){
+  /////CH02
+                  $('#c02 video').on('ended',function(){
+                    var num = $(this).attr('id');
+                    console.log(num+' ended');
+                    $(this).get(0).pause();
+                    $(this).hide();
+                    $('#' + num).hide();
+                    $(this).removeClass('now-playing');
+                    num++;
+                    if ($('#' + num).attr('vid') == 'yes'){
+                    $('#c02 .ch-logo').show();
+                    $('video#'+ num).get(0).play();
+                    $('video#'+ num).addClass('now-playing');
+                    $('video#'+ num).show();
+                    try{
+                      var nextVid  = num+=1;
+                      console.log(nextVid);
+                    $('video#'+ nextVid).get(0).load();
+                    $('video#'+ nextVid).get(0).pause();
+                  }catch(e){};
+                    console.log(num);
+                  }else if ($('#' + num).attr('vid') == 'no'){
+                    $('#c02 .ch-logo').hide();
+                        try{
+                      $('#'+ num + ' video').get(0).load();
+                      $('#'+ num + ' video').get(0).play();
+                      $('#'+ num + ' video').on('play', function() {
+                            console.log(num + ' video loaded');
+                              $('#'+num).show();
+                                });
+                  }catch(e){
+                  console.log('no vid-bg ' +num);
+                  $('#'+num).show();
+                  setTimeout(() => {
+                     $('#'+num).hide();
+                     num++;
+                      $('video#'+ num).show();
+                     $('video#'+ num).get(0).play();
+                     console.log(num);
+                     }, 1000);
+                   };
+
+                } else if ($('#' + num).attr('vid') == 'end'){
+                  $('#c02 .ch-logo').hide();
+                  $('#'+num).show();
+                  console.log(num + ' end');
+                    };
+                  });
+
+/////CH03
+                $('#c03 video').on('ended',function(){
                   var num = $(this).attr('id');
                   console.log(num+' ended');
                   $(this).get(0).pause();
@@ -260,16 +316,19 @@ $(window).resize(function(){
                   $(this).removeClass('now-playing');
                   num++;
                   if ($('#' + num).attr('vid') == 'yes'){
-                  $('#c02 .ch-logo').show();
+                  $('#c03 .ch-logo').show();
                   $('video#'+ num).get(0).play();
                   $('video#'+ num).addClass('now-playing');
                   $('video#'+ num).show();
                   try{
-                  // $('video#'+ (num+=1)).get(0).load();
+                    var nextVid  = num+=1;
+                    console.log(nextVid);
+                  $('video#'+ nextVid).get(0).load();
+                  $('video#'+ nextVid).get(0).pause();
                 }catch(e){};
                   console.log(num);
                 }else if ($('#' + num).attr('vid') == 'no'){
-                  $('#c02 .ch-logo').hide();
+                  $('#c03 .ch-logo').hide();
                       try{
                     $('#'+ num + ' video').get(0).load();
                     $('#'+ num + ' video').get(0).play();
@@ -290,102 +349,60 @@ $(window).resize(function(){
                  };
 
               } else if ($('#' + num).attr('vid') == 'end'){
+                $('#c03 .ch-logo').hide();
+                $('#'+num).show();
                 console.log(num + ' end');
                   };
                 });
-/////CH03
-      $('#c03 video').on('ended',function(){
-        var num = $(this).attr('id');
-        console.log(num+' ended');
-        $(this).get(0).pause();
-        $(this).hide();
-        $('#' + num).hide();
-        $(this).removeClass('now-playing');
-        num++;
-        if ($('#' + num).attr('vid') == 'yes'){
-        $('#c03 .ch-logo').show();
-        $('video#'+ num).get(0).play();
-        $('video#'+ num).addClass('now-playing');
-        $('video#'+ num).show();
-        try{
-        // $('video#'+ (num+=1)).get(0).load();
-      }catch(e){};
-        console.log(num);
-      }else if ($('#' + num).attr('vid') == 'no'){
-        $('#c03 .ch-logo').hide();
-            try{
-          $('#'+ num + ' video').get(0).load();
-          $('#'+ num + ' video').get(0).play();
-          $('#'+ num + ' video').on('play', function() {
-                console.log(num + ' video loaded');
-                  $('#'+num).show();
-                    });
-      }catch(e){
-      console.log('no vid-bg ' +num);
-      $('#'+num).show();
-      setTimeout(() => {
-         $('#'+num).hide();
-         num++;
-          $('video#'+ num).show();
-         $('video#'+ num).get(0).play();
-         console.log(num);
-         }, 1000);
-       };
 
-    } else if ($('#' + num).attr('vid') == 'end'){
-      console.log(num + ' end');
-        };
-      });
+/////CH04
+                $('#c04 video').on('ended',function(){
+                  var num = $(this).attr('id');
+                  console.log(num+' ended');
+                  $(this).get(0).pause();
+                  $(this).hide();
+                  $('#' + num).hide();
+                  $(this).removeClass('now-playing');
+                  num++;
+                  if ($('#' + num).attr('vid') == 'yes'){
+                  $('#c04 .ch-logo').show();
+                  $('video#'+ num).get(0).play();
+                  $('video#'+ num).addClass('now-playing');
+                  $('video#'+ num).show();
+                  try{
+                    var nextVid  = num+=1;
+                    console.log(nextVid);
+                  $('video#'+ nextVid).get(0).load();
+                  $('video#'+ nextVid).get(0).pause();
+                }catch(e){};
+                  console.log(num);
+                }else if ($('#' + num).attr('vid') == 'no'){
+                  $('#c04 .ch-logo').hide();
+                      try{
+                    $('#'+ num + ' video').get(0).load();
+                    $('#'+ num + ' video').get(0).play();
+                    $('#'+ num + ' video').on('play', function() {
+                          console.log(num + ' video loaded');
+                            $('#'+num).show();
+                              });
+                }catch(e){
+                console.log('no vid-bg ' +num);
+                $('#'+num).show();
+                setTimeout(() => {
+                   $('#'+num).hide();
+                   num++;
+                    $('video#'+ num).show();
+                   $('video#'+ num).get(0).play();
+                   console.log(num);
+                   }, 1000);
+                 };
 
-////CH04
-      $('#c04 video').on('ended',function(){
-        var num = $(this).attr('id');
-        console.log(num+' ended');
-        $(this).get(0).pause();
-        $(this).hide();
-        $('#' + num).hide();
-        $(this).removeClass('now-playing');
-        num++;
-        if ($('#' + num).attr('vid') == 'yes'){
-        $('#c04 .ch-logo').show();
-        $('video#'+ num).get(0).play();
-        $('video#'+ num).addClass('now-playing');
-        $('video#'+ num).show();
-        try{
-        // $('video#'+ (num+=1)).get(0).load();
-      }catch(e){};
-        console.log(num);
-      }else if ($('#' + num).attr('vid') == 'no'){
-        $('#c04 .ch-logo').hide();
-            try{
-          $('#'+ num + ' video').get(0).load();
-          $('#'+ num + ' video').get(0).play();
-          $('#'+ num + ' video').on('play', function() {
-                console.log(num + ' video loaded');
-                  $('#'+num).show();
-                    });
-      }catch(e){
-      console.log('no vid-bg ' +num);
-      $('#'+num).show();
-      setTimeout(() => {
-         $('#'+num).hide();
-         num++;
-          $('video#'+ num).show();
-         $('video#'+ num).get(0).play();
-         console.log(num);
-         }, 1000);
-       };
-
-    } else if ($('#' + num).attr('vid') == 'end'){
-      console.log(num + ' end');
-        };
-      });
-
-
-
-
-
-
+              } else if ($('#' + num).attr('vid') == 'end'){
+                $('#c04 .ch-logo').hide();
+                $('#'+num).show();
+                console.log(num + ' end');
+                  };
+                });
 
 
   for (g=1; g<=topCh; g++){
@@ -476,6 +493,7 @@ $(".gify").hover(function(){
             // etc.
        });
     });
+
 
 </script>
 
