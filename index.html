@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title> דודו טי.וי. </title>
   <link rel="stylesheet" href="style.css">
   <link rel="preload" href="VCR_OSD_MONO.ttf" as="font" crossorigin="anonymous" />
   <link rel="icon" type="image/png" href="assets/dudu.ico"/>
@@ -12,7 +13,9 @@
   <div class="error-effect over-effects" style="opacity:0.1;"></div>
   <div class="old-tv-content over-effects"></div>
 <div class="blue-bg" style="display:none;"></div>
+
   <audio id="static" src="assets/white-noise.mp3"></audio>
+  <audio id="ping" src="assets/ping.mp3"></audio>
           <div id="chNum" class="green-text">0</div>
         <!-- <div id="clock" style="display:none;">  <span id="minutes"></span>:<span id="seconds"></span></div>   -->
        <div id="remote" style="display:none;">
@@ -365,6 +368,7 @@ $(window).resize(function(){
 $('#c00').show();
 /////first click
 $("#on-button").click(function() {
+  $('#ping').get(0).play();
   $('#c00').hide();
     $('#dudu-logo').show();
     setTimeout(() => {
