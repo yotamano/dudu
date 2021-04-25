@@ -138,9 +138,12 @@
     <source src="https://drive.google.com/uc?export=download&id=1M8UD2kij2_vEt_FvHwRiYXi9GpHdPqu2" type='video/mp4'>
   </video>
 </div>
-<video id="38" loop style="display:none;" vid="yes" style="z-index: 0 !important;">
+<div id="38" class="ch-content" style="display:none; z-index: 0 !important;" vid="no">
+  <h1 id="off-button">OFF</h1>
+<video id="38" loop>
   <source src="https://drive.google.com/uc?export=download&id=1_s85h-Y1ecqhfReBnPXBnlqiE7_K7Vw3" type='video/mp4'>
 </video>
+</div>
 
 
 <div id="c04" class="page">
@@ -172,7 +175,9 @@
   <video id="45" style="display:none;" vid="yes">
     <source src="https://drive.google.com/uc?export=download&id=1aG5w9bbwWex0KdYIZyyEteKzVWeG-AxT" type='video/mp4'>
   </video>
-
+  <div id="46" vid="end" style="display:none;">
+    <img class="ch-bg" src="assets/ch04/ch04-end.jpg" />
+  </div>
 </div>
 
 
@@ -427,6 +432,19 @@ $("#on-button").click(function() {
  }, 1500);
    setTimeout(() => { $('#remote').fadeIn('slow');  }, 1000);
 });
+
+
+//OFF
+$("#off-button").click(function() {
+$('#c00').show();
+$('#c01').hide();
+$('#c02').hide();
+$('#c03').hide();
+$('#c04').hide();
+$('.page video').prop('muted', true);
+
+})
+
 
 // ////clock
 //    var sec = 1100;
