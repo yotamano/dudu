@@ -24,10 +24,14 @@ html, body{
     }
 .blue-bg{
   height: 100%;
-  background-color: blue;
+  background-color: #020202;
   z-index: -20 !important;
   position: relative;
 
+}
+
+#dudu-logo{
+    background-color: blue;
 }
 
 
@@ -46,10 +50,11 @@ h1{
     font-family: VCR;
   position: absolute;
   top:25%;
-  left: 45%;
 text-align: center;
 z-index: 4;
 filter: drop-shadow(2px -4px  #000);
+width: 100%;
+cursor: pointer;
 }
 
 h1:hover{
@@ -111,7 +116,6 @@ opacity: 1;
  }
 
  .ch-content{
-   /* position: absolute; */
    height: 100%;
    width: 100%;
    z-index: 0;
@@ -158,7 +162,14 @@ height: auto;
 
 
 
-
+.ch-logo{
+  position: absolute;
+  width: 100%;
+  height: auto;
+    top:8%;
+   right:8%;
+  max-width: 12vh;
+}
 
 #c00{
 background-color:  black !important;
@@ -191,6 +202,12 @@ video{
   position: fixed;
   z-index: -5;
   object-fit: cover;
+}
+
+video[poster]{
+object-fit: cover;
+height:100%;
+width:100%;
 }
 
 .over-effects{

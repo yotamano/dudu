@@ -13,7 +13,7 @@
 <div class="blue-bg" style="display:none;"></div>
   <audio id="static" src="Static.mp3"></audio>
           <div id="chNum" class="green-text">0</div>
-        <div id="clock" style="display:none;">  <span id="minutes"></span>:<span id="seconds"></span></div>
+        <!-- <div id="clock" style="display:none;">  <span id="minutes"></span>:<span id="seconds"></span></div>   -->
        <div id="remote" style="display:none;">
        <p id="ch-up" class="green-text">+</p>
        <p class="green-text">C H</p>
@@ -25,72 +25,159 @@
 
 
 <div id="c01" class="page">
-    <video autoplay id="11" vid="yes">
+    <img class="ch-logo" src="assets/ch01/ch01-logo-small.png"  style=""/>
+    <video autoplay muted preload id="11" vid="yes" class="now-playing">
     <source src="https://drive.google.com/uc?export=download&id=1Qv66PcBPNSD97Bg_gKE9xJVgcDv4SyNi" type='video/mp4'>
   </video>
-    <video  id="12" vid="yes" style="display:none;">
+
+    <video id="12" vid="yes" style="display:none;">
       <source src="https://drive.google.com/uc?export=download&id=1fvdhNgmRJJWpmgKMtW9zboRBkbXD4YVP" type='video/mp4'>
     </video>
-  <div id="13" class="ch-content" style="display:none;" vid="end">
-    <img class="static-img" src="assets/c01-logo.png"  style="bottom:10%; right:5%; max-width: 20vh;"/>
-          <img class="gify" src="assets/duduface-static.png" loc="assets/duduface" style="top:5%; right:8%; max-width: 25vh;"/>
-          <img class="gify" src="assets/screaming-mouth-static.png" loc="assets/screaming-mouth" style="top:40%; left:5%; max-width: 40vh;"/>
+  <div id="13" class="ch-content" style="display:none;" vid="no">
+    <img class="static-img" src="assets/ch01/ch01-logo.png"  style="bottom:10%; right:5%; max-width: 20vh;"/>
+
           <div class="text-container">
-  <img class="text-img" src="assets/c01-text-01.png"  style=" top:10%; right:25%; max-width: 50vh;"/>
-  <img class="text-img" src="assets/c01-text-01.png"  style=" top:10%; left:25%; max-width: 50vh;"/>
-  <img class="text-img" src="assets/c01-text-01.png"  style=" bottom:10%; right:25%; max-width: 50vh;"/>
+  <img class="text-img" src="assets/ch01/ch01-text-01.png"  style=" top:10%; right:25%; max-width: 20vh;"/>
+  <img class="text-img" src="assets/ch01/ch01-text-02.png"  style=" top:10%; left:25%; max-width: 20vh;"/>
 </div>
-        <img class="ch-bg" src="assets/ch1-stars.png" style="background-color:#101010"/>
+<video id="13">
+  <source src="https://drive.google.com/uc?export=download&id=1irmwkevAyfFA6NfDYis5LphcopcnVRKH" type='video/mp4' poster='assets/ch01/ch01-bg.png'>
+</video>
+  </div>
+  <video  id="14" vid="yes" style="display:none;">
+    <source src="https://drive.google.com/uc?export=download&id=1Pz1RvEcpLDP-dGduv1Z85edbtxZwZpY7" type='video/mp4'>
+  </video>
+  <video  id="15" vid="yes" style="display:none;">
+    <source src="https://drive.google.com/uc?export=download&id=1wZy6sUdwFPVkeURDkwWySTe9fXPixkKU" type='video/mp4'>
+  </video>
+
+  <div id="16" vid="end" style="display:none;">
+    <img class="ch-bg" src="assets/ch01/ch01-end.jpg" />
   </div>
 </div>
 
 
 <div id="c02" class="page">
-<div class="ch-content">
-  <img class="gify" src="assets/hands-static.png" loc="assets/hands" style="top: 6rem; left:5rem; max-width: 55%;"/>
+  <img class="ch-logo" src="assets/ch02/ch02-small-logo.png" />
+  <video autoplay muted preload id="21" vid="yes" >
+    <source src="https://drive.google.com/uc?export=download&id=1dc-FCjs5EDRclWuvoaxjt8rkCnakNFLf" type='video/mp4'>
+  </video>
+
+    <video id="22" style="display:none;" vid="yes">
+      <source src="https://drive.google.com/uc?export=download&id=1ZNoDe3E3X6dxQN-XeJAtcJMujieJUzYC" type='video/mp4'>
+    </video>
+    <div id="23" class="ch-content" style="display:none;" vid="no">
+  <img class="static-img" src="assets/ch02/ch02-logo.png" style="bottom:10%; right:10%; max-width: 20vh;"/>
+      <div class="text-container" style="left:10%; top:30%; max-width:80%; min-height: 20%;" >
+        <img class="text-img" src="assets/ch02/ch02-text-01.png"  style=" right:25%; max-width: 100vh;"/>
+        <img class="text-img" src="assets/ch02/ch02-text-02.png"  style=" right:25%; max-width: 100vh;"/>
+        <img class="text-img" src="assets/ch02/ch02-text-03.png"  style="  right:25%; max-width: 100vh;"/>
+        </div>
+      <video id="23">
+        <source preload src="https://drive.google.com/uc?export=download&id=1v6v0R4Gtb-l8cjh5JnMxkDKFKmVOieZ4" type='video/mp4' poster='assets/ch02/ch02-bg.png'>
+      </video>
+      </div>
+    <video id="24" style="display:none;" vid="yes">
+      <source src="https://drive.google.com/uc?export=download&id=/1RG-fFKz3WA_dthbmcxFxnczZ-vaBojhd" type='video/mp4'>
+    </video>
+    <video id="25" style="display:none;" vid="yes">
+      <source src="https://drive.google.com/uc?export=download&id=1EUGpapqvCMmYlMk_Bd5auc7zkWgfvtmR" type='video/mp4'>
+    </video>
+    <div id="26" vid="end" style="display:none;">
+      <img class="ch-bg" src="assets/ch02/ch02-end.jpg" />
+    </div>
 </div>
-<img class="ch-bg" src="assets/ch02.png"/>
-</div>
+
+
 <div id="c03" class="page">
-  <video autoplay id="31" vid="yes">
-    <source src="https://drive.google.com/uc?export=download&id=1edU1jd5QK5hjyI3xv0bl-mJwW9Rer6TU" type='video/mp4'>
+  <img class="ch-logo" src="assets/ch03/ch03-logo-small.png" />
+  <video autoplay muted preload id="31" vid="yes" >
+    <source src="https://drive.google.com/uc?export=download&id=1d4jLOfY97OAb6w1twppKQHQqIyHm-kZx" type='video/mp4'>
   </video>
-  <video id="32" style="display:none;" vid="yes">
-    <source src="https://drive.google.com/uc?export=download&id=13StrQ9gqUoTifNJw0kSAixSDHWTsMVnR" type='video/mp4'>
-  </video>
-  <div id="33" class="ch-content" style="display:none;" vid="no">
-    <img class="ch-bg" src="assets/ch03.png"/>
-  </div>
-  <video id="34" style="display:none;" vid="yes">
-    <source src="https://drive.google.com/uc?export=download&id=1Dc2CaVbMpBpRUcepiRQi4Kg9JbZ33ZRL" type='video/mp4'>
-  </video>
-</div>
-<div id="c04" class="page"><img class="ch-bg" src="assets/ch04.png"/></div>
-<div id="c05" class="page">
+  <div id="32" class="ch-content" style="display:none;" vid="no">
+    <img class="static-img" src="assets/ch03/ch03-logo.png" style="bottom:10%; right:40%; max-width: 20vh;"/>
 
-  <video autoplay id="51" vid="yes" preload="auto">
-    <source src="https://drive.google.com/uc?export=download&id=1a-HwGBEIY8wLHSvtVH56M3dcmVwgb8t3" type='video/mp4'>
-</video>
-<video id="52" style="display:none;" vid="yes">
-  <source src="https://drive.google.com/uc?export=download&id=1y6Bg71lpajgCrcLHmDB-YL_XOLAsa5dc" type='video/mp4'>
-</video>
-<div id="53" class="ch-content"  style="display:none;" vid="no">
-  <img class="gify" src="assets/hands-static.png" loc="assets/hands" style="top: 6rem; left:5rem; max-width: 55%;"/>
-  <img class="ch-bg" src="assets/ch02.png"/>
+
+    <div class="text-container" style="left:60%; top:30%">
+
+      <img class="text-img" src="assets/ch03/ch03-text-01.png"  style=" right:25%; max-width: 25vh;"/>
+      <img class="text-img" src="assets/ch03/ch03-text-02.png"  style=" right:25%; max-width: 25vh;"/>
+      <img class="text-img" src="assets/ch03/ch03-text-03.png"  style="  right:25%; max-width: 25vh;"/>
+      </div>
+    <video id="32">
+      <source src="https://drive.google.com/uc?export=download&id=1Jvk2XLzVyMKZtpARwm4w8CzCBCWoLZGn" type='video/mp4'>
+    </video>
+    </div>
+
+  <video id="33" style="display:none;" vid="yes">
+    <source src="https://drive.google.com/uc?export=download&id=13OrdvWVSnKCKTw-xuvKggtizxhCRHddP" type='video/mp4'>
+  </video>
+
+  <div id="34" class="ch-content" style="display:none;" vid="no">
+    <img class="static-img" src="assets/ch03/ch03-logo.png" style="bottom:10%; right:40%; max-width: 20vh;"/>
+
+
+    <div class="text-container" style="left:60%; top:30%">
+
+      <img class="text-img" src="assets/ch03/ch03-text-02.png"  style=" right:25%; max-width: 25vh;"/>
+      <img class="text-img" src="assets/ch03/ch03-text-03.png"  style=" right:25%; max-width: 25vh;"/>
+      <img class="text-img" src="assets/ch03/ch03-text-04.png"  style="  right:25%; max-width: 25vh;"/>
+      </div>
+    <video id="34">
+      <source src="https://drive.google.com/uc?export=download&id=1Jvk2XLzVyMKZtpARwm4w8CzCBCWoLZGn" type='video/mp4'>
+    </video>
+    </div>
+  <video id="35" style="display:none;" vid="yes">
+    <source src="https://drive.google.com/uc?export=download&id=1WaAN-TVG0G6y7csXhH5dvS1B4yqdKS3k" type='video/mp4'>
+  </video>
+  <video id="36" style="display:none;" vid="yes">
+    <source src="https://drive.google.com/uc?export=download&id=1CX554KywZq5bCQh5094QyrX7miX9E28E" type='video/mp4'>
+  </video>
+  <video id="37" style="display:none;" vid="yes">
+    <source src="https://drive.google.com/uc?export=download&id=1M8UD2kij2_vEt_FvHwRiYXi9GpHdPqu2" type='video/mp4'>
+  </video>
 </div>
-<video id="54" style="display:none;" vid="yes">
-  <source src="https://drive.google.com/uc?export=download&id=12O-qjjxr_Jf4FdU66_iAVGHJRNTloujv" type='video/mp4'>
+<video id="38" loop style="display:none;" vid="yes" style="z-index: 0 !important;">
+  <source src="https://drive.google.com/uc?export=download&id=1_s85h-Y1ecqhfReBnPXBnlqiE7_K7Vw3" type='video/mp4'>
 </video>
-<video id="55" style="display:none;" vid="yes">
-  <source src="https://drive.google.com/uc?export=download&id=1toWf-jV9tBPi0g_dKX_h2JKceNdLNgWE" type='video/mp4'>
-</video>
-<div id="56" class="ch-content"  style="display:none;" vid="end">
-  <img class="gify" src="assets/hands-static.png" loc="assets/hands" style="top: 6rem; left:5rem; max-width: 55%;"/>
-  <img class="ch-bg" src="assets/ch02.png"/>
+
+
+<div id="c04" class="page">
+  <img class="ch-logo" src="assets/ch04/ch04-logo-small.png"  style=""/>
+  <video id="41" autoplay muted preload vid="yes" class="now-playing" >
+    <source src="https://drive.google.com/uc?export=download&id=1UEze_oRwNLMs9VKkgCL6O02qeTiSTijD" type='video/mp4'>
+  </video>
+  <div id="42" class="ch-content" style="display:none;" vid="no">
+    <img class="static-img" src="assets/ch04/ch04-logo.png" style="bottom:10%; right:5%; max-width: 20vh;"/>
+    <img class="static-img" src="assets/ch04/ch04-tree.png"  style="bottom:15%; left:-5%; max-width: 60vh;"/>
+    <img class="static-img" src="assets/ch04/ch04-chair.png"  style="bottom:10%; left:10%; max-width: 45vh;"/>
+
+    <div class="text-container" style="left: 50%;">
+      <img class="text-img" src="assets/ch04/ch04-TNT.png"  style=" right:25%; max-width: 50vh;"/>
+      <img class="text-img" src="assets/ch04/ch04-text-01.png"  style=" right:25%; max-width: 50vh;"/>
+      <img class="text-img" src="assets/ch04/ch04-text-02.png"  style=" right:25%; max-width: 50vh;"/>
+      <img class="text-img" src="assets/ch04/ch04-text-01.png"  style="  right:25%; max-width: 50vh;"/>
+      </div>
+    <video id="42">
+      <source src="https://drive.google.com/uc?export=download&id=1grBpZqFtN3sWikuJpsSc8vQQ03f05p6S" type='video/mp4'>
+    </video>
+    </div>
+  <video id="43" style="display:none;" vid="yes">
+    <source src="https://drive.google.com/uc?export=download&id=1CsvGE65BRuH4TmOwLlKaY3X9LSj08UKC" type='video/mp4'>
+  </video>
+  <video id="44" style="display:none;" vid="yes">
+    <source src="https://drive.google.com/uc?export=download&id=13DTUtDPsR1290BfI6rRWuJ_cZ2IxePXG" type='video/mp4'>
+  </video>
+  <video id="45" style="display:none;" vid="yes">
+    <source src="https://drive.google.com/uc?export=download&id=1aG5w9bbwWex0KdYIZyyEteKzVWeG-AxT" type='video/mp4'>
+  </video>
+
 </div>
-</div>
+
+
+
 <div id="c00" class="page"><h1 id="on-button">ON</h1></div>
-
+<div id="dudu-logo" class="page" style="display:none;"><img class="static-img" src="assets/ch04/ch04-logo.png" style="top:30%; right:45%; max-width: 20vh;"/></div>
 
 <script>
 var $video  = $('video'),
@@ -113,83 +200,189 @@ $(window).resize(function(){
 
   var i=0;
   var lowCh = 1;
-  var topCh = 5;
-      $(document).ready(function(){
+  var topCh = 4;
+  var vid = $('video.now-playing').get(0);
 
-        $('#c01> video').on('ended',function(){
+
+        $(document).ready(function(){
+
+
+          /////CH01
+                          $('#c01 video').on('ended',function(){
+                            var num = $(this).attr('id');
+                            console.log(num+' ended');
+                            $(this).get(0).pause();
+                            $(this).hide();
+                            $('#' + num).hide();
+                            $(this).removeClass('now-playing');
+                            num++;
+                            if ($('#' + num).attr('vid') == 'yes'){
+                            $('#c01 .ch-logo').show();
+                            $('video#'+ num).get(0).play();
+                            $('video#'+ num).addClass('now-playing');
+                            $('video#'+ num).show();
+                            try{
+                            // $('video#'+ (num+=1)).get(0).load();
+                          }catch(e){};
+                            console.log(num);
+                          }else if ($('#' + num).attr('vid') == 'no'){
+                            $('#c01 .ch-logo').hide();
+                                try{
+                              $('#'+ num + ' video').get(0).load();
+                              $('#'+ num + ' video').get(0).play();
+                              $('#'+ num + ' video').on('play', function() {
+                                    console.log(num + ' video loaded');
+                                      $('#'+num).show();
+                                        });
+                          }catch(e){
+                          console.log('no vid-bg ' +num);
+                          $('#'+num).show();
+                          setTimeout(() => {
+                             $('#'+num).hide();
+                             num++;
+                              $('video#'+ num).show();
+                             $('video#'+ num).get(0).play();
+                             console.log(num);
+                             }, 1000);
+                           };
+
+                        } else if ($('#' + num).attr('vid') == 'end'){
+                          console.log(num + ' end');
+                            };
+                          });
+/////CH02
+                $('#c02 video').on('ended',function(){
+                  var num = $(this).attr('id');
+                  console.log(num+' ended');
+                  $(this).get(0).pause();
+                  $(this).hide();
+                  $('#' + num).hide();
+                  $(this).removeClass('now-playing');
+                  num++;
+                  if ($('#' + num).attr('vid') == 'yes'){
+                  $('#c02 .ch-logo').show();
+                  $('video#'+ num).get(0).play();
+                  $('video#'+ num).addClass('now-playing');
+                  $('video#'+ num).show();
+                  try{
+                  // $('video#'+ (num+=1)).get(0).load();
+                }catch(e){};
+                  console.log(num);
+                }else if ($('#' + num).attr('vid') == 'no'){
+                  $('#c02 .ch-logo').hide();
+                      try{
+                    $('#'+ num + ' video').get(0).load();
+                    $('#'+ num + ' video').get(0).play();
+                    $('#'+ num + ' video').on('play', function() {
+                          console.log(num + ' video loaded');
+                            $('#'+num).show();
+                              });
+                }catch(e){
+                console.log('no vid-bg ' +num);
+                $('#'+num).show();
+                setTimeout(() => {
+                   $('#'+num).hide();
+                   num++;
+                    $('video#'+ num).show();
+                   $('video#'+ num).get(0).play();
+                   console.log(num);
+                   }, 1000);
+                 };
+
+              } else if ($('#' + num).attr('vid') == 'end'){
+                console.log(num + ' end');
+                  };
+                });
+/////CH03
+      $('#c03 video').on('ended',function(){
         var num = $(this).attr('id');
+        console.log(num+' ended');
         $(this).get(0).pause();
         $(this).hide();
+        $('#' + num).hide();
+        $(this).removeClass('now-playing');
         num++;
         if ($('#' + num).attr('vid') == 'yes'){
+        $('#c03 .ch-logo').show();
         $('video#'+ num).get(0).play();
+        $('video#'+ num).addClass('now-playing');
         $('video#'+ num).show();
+        try{
+        // $('video#'+ (num+=1)).get(0).load();
+      }catch(e){};
         console.log(num);
       }else if ($('#' + num).attr('vid') == 'no'){
-        console.log(num);
-        $('#'+num).show();
-          setTimeout(() => {
-             $('#'+num).hide();
-             num++;
-              $('video#'+ num).show();
-             $('video#'+ num).get(0).play();
-             console.log(num);
-             }, 1000);
-    } else if ($('#' + num).attr('vid') == 'end'){
-      console.log(num);
+        $('#c03 .ch-logo').hide();
+            try{
+          $('#'+ num + ' video').get(0).load();
+          $('#'+ num + ' video').get(0).play();
+          $('#'+ num + ' video').on('play', function() {
+                console.log(num + ' video loaded');
+                  $('#'+num).show();
+                    });
+      }catch(e){
+      console.log('no vid-bg ' +num);
       $('#'+num).show();
+      setTimeout(() => {
+         $('#'+num).hide();
+         num++;
+          $('video#'+ num).show();
+         $('video#'+ num).get(0).play();
+         console.log(num);
+         }, 1000);
+       };
+
+    } else if ($('#' + num).attr('vid') == 'end'){
+      console.log(num + ' end');
         };
       });
 
-        $('#c03> video').on('ended',function(){
+////CH04
+      $('#c04 video').on('ended',function(){
         var num = $(this).attr('id');
+        console.log(num+' ended');
         $(this).get(0).pause();
         $(this).hide();
+        $('#' + num).hide();
+        $(this).removeClass('now-playing');
         num++;
         if ($('#' + num).attr('vid') == 'yes'){
+        $('#c04 .ch-logo').show();
         $('video#'+ num).get(0).play();
+        $('video#'+ num).addClass('now-playing');
         $('video#'+ num).show();
+        try{
+        // $('video#'+ (num+=1)).get(0).load();
+      }catch(e){};
         console.log(num);
       }else if ($('#' + num).attr('vid') == 'no'){
-        console.log(num);
-        $('#'+num).show();
-          setTimeout(() => {
-             $('#'+num).hide();
-             num++;
-              $('video#'+ num).show();
-             $('video#'+ num).get(0).play();
-             console.log(num);
-             }, 1000);
-    } else if ($('#' + num).attr('vid') == 'end'){
-      console.log(num);
+        $('#c04 .ch-logo').hide();
+            try{
+          $('#'+ num + ' video').get(0).load();
+          $('#'+ num + ' video').get(0).play();
+          $('#'+ num + ' video').on('play', function() {
+                console.log(num + ' video loaded');
+                  $('#'+num).show();
+                    });
+      }catch(e){
+      console.log('no vid-bg ' +num);
       $('#'+num).show();
+      setTimeout(() => {
+         $('#'+num).hide();
+         num++;
+          $('video#'+ num).show();
+         $('video#'+ num).get(0).play();
+         console.log(num);
+         }, 1000);
+       };
+
+    } else if ($('#' + num).attr('vid') == 'end'){
+      console.log(num + ' end');
         };
       });
 
-      $('#c05> video').on('ended',function(){
-        var num = $(this).attr('id');
-        $(this).get(0).pause();
-        $(this).hide();
-        num++;
-        if ($('#' + num).attr('vid') == 'yes'){
-        $('video#'+ num).get(0).play();
-        $('video#'+ num).show();
-        console.log(num);
-      }else if ($('#' + num).attr('vid') == 'no'){
-        console.log(num);
-        $('#'+num).show();
-          setTimeout(() => {
-             $('#'+num).hide();
-             num++;
-              $('video#'+ num).show();
-             $('video#'+ num).get(0).play();
-             console.log(num);
-             }, 1000);
-    } else if ($('#' + num).attr('vid') == 'end'){
-      console.log(num);
-      $('#'+num).show();
-        };
-      });
+
+
 
 
 
@@ -201,31 +394,37 @@ $(window).resize(function(){
 $('#c00').show();
 /////first click
 $("#on-button").click(function() {
-  $(".error-effect").css("opacity", "1");
-    $('.blue-bg').show();
-     $('video#51').get(0).play();
-   $('video#11').get(0).play();
-   $('video#31').get(0).play();
-   $('.page > video').prop('muted', true);
+  $('#c00').hide();
+  $('#dudu-logo').show();
+    setTimeout(() => {
+      $(".error-effect").css("opacity", "1");
+    $('#dudu-logo').hide();
+      $('.blue-bg').show();
+    $('.page video').prop('muted', true);
+    $('video#11').get(0).play();
+    $('video#21').get(0).play();
+    $('video#31').get(0).play();
+    $('video#41').get(0).play();
+   $('.page video').prop('muted', true);
    $('#ch-up').trigger('click');
+ }, 1500);
    setTimeout(() => { $('#remote').fadeIn('slow');  }, 1000);
+});
 
-
-////clock
-   var sec = 1100;
-   function pad ( val ) { return val > 9 ? val : "0" + val; }
-   setInterval( function(){
-
-       $("#seconds").html(pad(++sec%60));
-       $("#minutes").html(pad(parseInt(sec/60,10)));
-       $('#clock').show();
-
-        }, 1000);
-
+// ////clock
+//    var sec = 1100;
+//    function pad ( val ) { return val > 9 ? val : "0" + val; }
+//    setInterval( function(){
+//        $("#seconds").html(pad(++sec%60));
+//        $("#minutes").html(pad(parseInt(sec/60,10)));
+//        $('#clock').show();
+//         }, 1000);
+//
 });
 
 $("#ch-up").click(function() {
   $('#noise').show();
+  vid = $('video.now-playing').get(0);
   setTimeout(() => {  $('#noise').hide();  }, 500);
     var hideCh = i;
   $('#static').get(0).play();
@@ -234,14 +433,15 @@ $("#ch-up").click(function() {
     var showCh = i;
   $('#c0'+ hideCh).hide();
   $('#c0'+ showCh).show();
-  $('#c0'+hideCh+'> video').prop('muted', true);
-  $('#c0'+showCh+'> video').prop('muted', false);
+  $('#c0'+hideCh+' video').prop('muted', true);
+  $('#c0'+showCh+' video').prop('muted', false);
 
   console.log(i);
 });
 
 $("#ch-down").click(function() {
   $('#noise').show();
+  vid = $('video.now-playing').get(0);
   setTimeout(() => {  $('#noise').hide();  }, 500);
   var hideCh = i;
   $('#static').get(0).play();
@@ -250,14 +450,14 @@ $("#ch-down").click(function() {
     var showCh = i;
   $('#c0'+ hideCh).hide();
   $('#c0'+ showCh).show();
-  $('#c0'+hideCh+'> video').prop('muted', true);
-  $('#c0'+showCh+'> video').prop('muted', false);
+  $('#c0'+hideCh+' video').prop('muted', true);
+  $('#c0'+showCh+' video').prop('muted', false);
 
   console.log(i);
 });
 
 
-  });
+
 
 
 
@@ -271,6 +471,11 @@ $(".gify").hover(function(){
   $(this).attr('src' , $(this).attr('loc') + '-static.png');
   });
 
+  $(".text-container").fadeIn("fast",function(){
+       $("text-img").fadeIn("fast", function(){
+            // etc.
+       });
+    });
 
 </script>
 
